@@ -1,3 +1,5 @@
-import {useOfficers} from './officers/OfficerProvider.js'
+// import {useOfficers} from './officers/OfficerProvider.js'
+import { CriminalList } from './criminals/CriminalList.js';
 
-useOfficers()
+// useOfficers()
+CriminalList()

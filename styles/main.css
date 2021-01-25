@@ -1,27 +1,13 @@
-.filter {
-    border: 1px dotted black;
-    padding: 1em;
-    margin: 0.5em;
-}
-.container {
-    display: flex;  /* Display the child items in a Flex layout */
-}
-.container {
-    display: flex;
-    flex-wrap: wrap;  /* Let the rows wrap if there are too many */
-}
-.container {
+
+
+.criminals {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly /* Evenly space the child elements */
 }
-.filter {
-    flex-basis: 22%;  /* Make each child element the same width */
-    border: 1px dotted black;
-    padding: 1em;
-    margin: 0.5em;
-}
-.filter {
+
+
+.criminal__ {
     flex-basis: 22%;
     border: 1px dotted black;
     padding: 1em;
