@@ -1,0 +1,16 @@
+
+
+.criminals {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly /* Evenly space the child elements */
+}
+
+
+.criminal__ {
+    flex-basis: 22%;
+    border: 1px dotted black;
+    padding: 1em;
+    margin: 0.5em;
+    text-align: flex-start; /* text in the boxes moved to right side*/
+}
