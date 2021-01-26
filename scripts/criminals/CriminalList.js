@@ -19,6 +19,7 @@ export const CriminalList = () => {
         }
      
      contentElement.innerHTML += `
+     <h3>Criminals</h3>
      <div class ="criminals">
      ${criminalHTMLRepresentations}
      </div>

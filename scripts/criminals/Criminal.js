@@ -1,11 +1,11 @@
 export const Criminal = (criminal) => {
     return `
     <div class="criminal__">
-    <p class="__name">${criminal.name}</p>
-    <p class="__age">${criminal.age}</p>
-    <p class="__conviction">${criminal.conviction}</p>
-    <p class="__incarceration">${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</p>
-    <p class="__incarceration">${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</p>
+    <p class="__name">Name: ${criminal.name}</p>
+    <p class="__age">Age: ${criminal.age}</p>
+    <p class="__conviction">Conviction: ${criminal.conviction}</p>
+    <p class="__incarceration">Start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</p>
+    <p class="__incarceration">End: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</p>
     </div>
     `
 }
