@@ -2,6 +2,7 @@
 // import { getConvictions, useConvictions } from './convictions/ConvictionDataProvider.js';
 import { ConvictionSelect } from './convictions/ConvictionSelect.js';
 import { CriminalList } from './criminals/CriminalList.js';
+import { NoteForm } from './notes/NoteForm.js';
 import { OfficerSelect } from './officers/OfficerSelect.js';
 
 // useOfficers()
@@ -11,3 +12,6 @@ CriminalList()
 // .then(( => console.log(useConvictions)))
 ConvictionSelect()
 OfficerSelect()
+
+//CHAPTER 7 FUNCTION CALLS///
+NoteForm()
