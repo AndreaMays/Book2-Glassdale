@@ -6,7 +6,7 @@ export const useOfficers = () => {
 
 export const getOfficers = () => {
     
-    fetch ("https://criminals.glassdale.us/officers")
+    return fetch ("https://criminals.glassdale.us/officers")
     .then(/*this side is taco*/response => response.json()) /*this ".then" waits for the "get fecth" http to run. Then when the info sent this line will run*/
     .then(officersArray => { /*this ".then" waits for line to 9's ".then" to run.*/
         // console.log(parsedResponse)
