@@ -1,6 +1,7 @@
 import { getCriminals, useCriminals } from "./CriminalDataProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "./../convictions/ConvictionDataProvider.js"
+import { useOfficers } from "../officers/OfficerProvider.js"
 
 const eventHub = document.querySelector(".container")
 const criminalsContainer = document.querySelector(".criminalsContainer")
@@ -66,4 +67,21 @@ eventHub.addEventListener("crimeChosen", event => {
 
     renderToDom(matchingCriminalsArray)
   }
+})
+
+eventHub.addEventListener("officerChosen", event => {
+    if (event.detail.officerSelectedCustomEvent !== "0") {
+        const newOfficersArray = useOfficers()  
+        const officerChosen = newOfficersArray.find(officerObj => {
+            return officerObj.id === parseInt(event.detail.officerSelectedCustomEvent)
+        })
+        // const newOfficersArray = useOfficers()
+
+        const matchingOfficersArray = newOfficersArray.filter(officerObj => {
+            return officerObj.criminal === officerChosen.name
+        })
+
+        renderToDom(matchingOfficersArray)
+    } 
+
 })

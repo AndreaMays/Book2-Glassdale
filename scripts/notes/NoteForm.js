@@ -17,7 +17,7 @@ const render = () => {
             <label for="author">Author</label>
             <input type="text" name="noteAuthor" id="noteAuthor"></input>
 
-            <label for="intuition">Intution</label>
+            <label for="intuition">Intuition</label>
             <input type="text" name="noteAuthor" id="noteIntuition"></input>
 
     
