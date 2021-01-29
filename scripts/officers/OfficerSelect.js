@@ -1,22 +1,23 @@
-import { useConvictions, getOfficers, useOfficers } from "./OfficerProvider";
+import { getOfficers, useOfficers } from "./OfficerProvider.js";
 
-const eventHub = document.querySelector(".")
-const contentTarget = document.querySelector(".")
+const eventHub = document.querySelector(".container")
+const contentTarget = document.querySelector(".filters__officer")
 
-eventHub.addEventListener("change", event => {
-    if (event.target.id === "officerSelect") {
-        const customEvent = new CustomEvent("officerChosen", {
+eventHub.addEventListener("change", changeEvent => {
+    if (changeEvent.target.id === "officerSelect") {
+        const selectedOfficer = changeEvent.target.value
+        const officerSelectedCustomEvent = new CustomEvent("officerSelected", {
             detail: {
-                officerThatWasChosen: event.target.value
+                selectedOfficerName: selectedOfficer
             }
         })
-        eventHub.dispatchEvent(customEvent)
+        eventHub.dispatchEvent(officerSelectedCustomEvent)
     }
 })
 
 export const OfficerSelect = () => {
     getOfficers()
-        .then(() => {
+    .then(() => {
             const officers = useOfficers()
             render(officers)
         })

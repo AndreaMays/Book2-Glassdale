@@ -1,3 +1,12 @@
 {
-    "notes": []
+  "notes": [
+    {
+      "text": "Slimey Character",
+      "suspect": "Jake",
+      "date": "2021-01-28",
+      "author": "Me",
+      "intuition": "Uber Guilty",
+      "id": 1
+    }
+  ]
 }
