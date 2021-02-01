@@ -69,19 +69,18 @@ eventHub.addEventListener("crimeChosen", event => {
   }
 })
 
-eventHub.addEventListener("officerChosen", event => {
-    if (event.detail.officerSelectedCustomEvent !== "0") {
-        const newOfficersArray = useOfficers()  
-        const officerChosen = newOfficersArray.find(officerObj => {
-            return officerObj.id === parseInt(event.detail.officerSelectedCustomEvent)
-        })
-        // const newOfficersArray = useOfficers()
-
-        const matchingOfficersArray = newOfficersArray.filter(officerObj => {
-            return officerObj.criminal === officerChosen.name
-        })
-
-        renderToDom(matchingOfficersArray)
+eventHub.addEventListener("officerSelected", event => {
+  if (event.detail.selectedOfficerName !== "0") {
+    // get name of officer from event detail
+    const officerName = event.detail.selectedOfficerName
+    // filter criminals array and find all criminals arrested by selected officer
+    const matchingOfficersArray = useCriminals().filter( criminal => criminal.arrestingOfficer === officerName)
+    debugger
+    
+        // pass filtered array into render to dom function
+      
+            
+            renderToDom(matchingOfficersArray)
     } 
 
 })
