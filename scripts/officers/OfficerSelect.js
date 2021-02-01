@@ -11,6 +11,7 @@ eventHub.addEventListener("change", changeEvent => {
                 selectedOfficerName: selectedOfficer
             }
         })
+        
         eventHub.dispatchEvent(officerSelectedCustomEvent)
     }
 })
@@ -27,7 +28,7 @@ const render = officerCollection => {
         contentTarget.innerHTML = `
             <select class="dropdown" id="officerSelect">
                 <option value="0">Please select an officer...</option>
-                ${officerCollection.map(officers => `<option value="${officers.id}">${officers.name}</option>`).join("")
+                ${officerCollection.map(officers => `<option value="${officers.name}">${officers.name}</option>`).join("")
         }
         </select>
     `
