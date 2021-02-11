@@ -1,4 +1,6 @@
+import { Criminal } from "../criminals/Criminal.js"
 import { saveNote } from "./NoteDataProvider.js"
+// import { Criminal } from "../criminals/Criminal.js";
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
@@ -20,10 +22,17 @@ const render = () => {
             <label for="intuition">Intuition</label>
             <input type="text" name="noteAuthor" id="noteIntuition"></input>
 
-    
+            <select id="noteForm--criminal" class="criminalSelect">Please Selecte a Criminal....
+                <option value="${Criminal.id}">${Criminal.name}</option>
+            </select>
             <button type="submit" value="submit" id="saveNote">Save Note</button>
         `
 }
+
+// chapter 13 goal is "criminalId" on the note
+// change the note form: instead of text input field, use a select element
+// select element will have an <option> element for each criminal
+
 
 export const NoteForm = () => {
     render()

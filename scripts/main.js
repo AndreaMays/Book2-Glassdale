@@ -6,7 +6,11 @@ import { NoteForm } from './notes/NoteForm.js';
 import { ShowNoteButton } from './notes/ShowNotesButton.js';
 import { OfficerList } from './officers/OfficerList.js';
 import { OfficerSelect } from './officers/OfficerSelect.js';
-import "./notes/NoteList.js"
+import './notes/NoteList.js'
+// import {  } from "module";
+import { ShowWitnessesButton } from './witnesses/ShowWitnessesButton.js';
+import './witnesses/WitnessesList.js'
+// try to make a file for "ShowCriminalButton" and then import ShowCriminalButton here
 // import { saveNote } from './notes/NoteDataProvider.js';
 
 CriminalList()
@@ -16,6 +20,7 @@ OfficerList
 //CHAPTER 7 FUNCTION CALLS///
 NoteForm()
 ShowNoteButton()
+ShowWitnessesButton
 
 // useOfficers()
 // useConvictions()
