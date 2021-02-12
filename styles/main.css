@@ -22,6 +22,7 @@
     font-size: 15pt;
     font-weight: bolder;    
     color: black;
+   
 }
 
 .noteListContainer {
@@ -33,6 +34,7 @@
     width: 25%;
 	background-color: #006d77;
     color: black;
+    /* flex-direction: row-reverse; */
 }
 
 .witnessContainer {
