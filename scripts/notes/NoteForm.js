@@ -62,29 +62,33 @@ export const NoteForm = () => {
     })
 }
 
-// Handle browser-generated click event in component
+// Handle browser-generated click event in component. With "listner click "
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
+        // check for ID of of button line 67
         // const suspect = document.querySelector("#noteSuspect").value
         // const suspect = document.getElementById("#noteSuspect") this "getElementById" works for line 39 as well
         const author = document.querySelector("#noteAuthor").value
         const intuition = document.querySelector("#noteIntuition").value
         const date = document.querySelector("#noteDate").value
         const note = document.querySelector("#noteEntry").value
+        const criminalId= document.querySelector("#noteForm--criminal").value
         
         // debugger test everything to this point of line 36
     // Make a new object representation of a note
 
+    // Make new "NewNote" object
         const newNote = {
             "text": note,
             // "suspect": suspect,
             "date": date,
             "author": author,
             "intuition": intuition,
-            // "criminalId": parseInt(criminal)
+            "criminalId": parseInt(criminalId)
         }
 
         // Change API state and application state
+        // Line92 invoke "saveNote" function with the "newNote" in the argugement
         saveNote(newNote)
     }
 })

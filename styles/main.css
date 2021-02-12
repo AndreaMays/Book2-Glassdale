@@ -1,7 +1,7 @@
 .criminals {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly /* Evenly space the child elements */
+    justify-content: space-evenly; /* Evenly space the child elements */
 }
 
 
@@ -10,5 +10,46 @@
     border: 2px solid black;
     padding: 1em;
     margin: 0.5em;
+    width: 50%;
     text-align: flex-start; /* text in the boxes moved to right side*/
+    font-weight: bold;
+}
+
+.noteFormContainer {
+    flex-basis: 25%;
+    border: 2px solid white;
+    text-align: center;
+    font-size: 15pt;
+    font-weight: bolder;    
+    color: black;
+}
+
+.noteListContainer {
+    flex-basis: 25%;
+    border: 2px solid white;
+    text-align: center;
+    font-size: 15pt;
+    font-weight: bolder;
+    width: 25%;
+	background-color: #006d77;
+    color: black;
+}
+
+.witnessContainer {
+    flex-basis: 22%;
+    border: 3px solid rgb(145, 21, 21);
+    padding: 1em;
+    margin: 0.5em;
+    /* text-align: center; */
+    font-weight: bold;
+
+}
+
+.notesList {
+    flex-basis: 22%;
+    border: 3px solid rgb(78, 74, 74);
+     padding: 1em;
+    margin: 0.5em;
+    text-align: center;
+    font-weight: bold;
 }

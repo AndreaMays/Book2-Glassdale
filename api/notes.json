@@ -1,84 +1,36 @@
 {
   "notes": [
     {
-      "text": "Slimey Character",
-      "suspect": "Jake",
-      "date": "2021-01-28",
-      "author": "Me",
-      "intuition": "Uber Guilty",
-      "id": 1
+      "text": "test",
+      "date": "2021-02-12",
+      "author": "test",
+      "intuition": "test",
+      "criminalId": 36,
+      "id": 11
     },
     {
-      "text": "lalal",
-      "suspect": "lalal",
-      "date": "2021-01-29",
-      "author": "lal",
-      "intuition": "la",
-      "id": 2
+      "text": "test",
+      "date": "2021-02-12",
+      "author": "test",
+      "intuition": "test",
+      "criminalId": 11,
+      "id": 12
     },
     {
-      "text": "boo",
-      "suspect": "boo",
-      "date": "2021-01-29",
-      "author": "boo",
-      "intuition": "boo",
-      "id": 3
+      "text": "test",
+      "date": "2021-02-25",
+      "author": "test",
+      "intuition": "test",
+      "criminalId": 19,
+      "id": 13
     },
     {
-      "text": "boo",
-      "suspect": "boo",
-      "date": "2021-01-29",
-      "author": "boo",
-      "intuition": "boo",
-      "id": 4
-    },
-    {
-      "text": "boo",
-      "suspect": "boo",
-      "date": "",
-      "author": "boo",
-      "intuition": "boo",
-      "id": 5
-    },
-    {
-      "text": "boo",
-      "suspect": "boo",
-      "date": "2021-02-05",
-      "author": "boo",
-      "intuition": "boo",
-      "id": 6
-    },
-    {
-      "text": "boo",
-      "suspect": "boo",
-      "date": "2021-01-29",
-      "author": "boo",
-      "intuition": "boo",
-      "id": 7
-    },
-    {
-      "text": "hey",
-      "suspect": "hey",
-      "date": "",
-      "author": "hey",
-      "intuition": "hey",
-      "id": 8
-    },
-    {
-      "text": "boo2",
-      "suspect": "boo2",
-      "date": "2021-01-29",
-      "author": "boo2",
-      "intuition": "Innocent",
-      "id": 9
-    },
-    {
-      "text": "dont care",
-      "suspect": "umm",
-      "date": "2021-01-29",
-      "author": "big bird",
-      "intuition": "fluffy",
-      "id": 10
+      "text": "blu did it",
+      "date": "2021-02-04",
+      "author": "me",
+      "intuition": "not guilty",
+      "criminalId": 63,
+      "id": 14
     }
   ]
 }
