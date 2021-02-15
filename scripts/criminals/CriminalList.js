@@ -75,7 +75,7 @@ eventHub.addEventListener("officerSelected", event => {
     const officerName = event.detail.selectedOfficerName
     // filter criminals array and find all criminals arrested by selected officer
     const matchingOfficersArray = useCriminals().filter( criminal => criminal.arrestingOfficer === officerName)
-    debugger
+    // debugger
     
         // pass filtered array into render to dom function
       
