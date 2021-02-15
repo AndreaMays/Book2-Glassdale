@@ -6,11 +6,12 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
-export const useNotes = () => notes.slice()
 let notes = []
 
+export const useNotes = () => notes.slice()
+
 export const getNotes = () => {
-    return fetch('http://localhost:8088/notes')
+    return fetch("http://localhost:8088/notes")
         .then(response => response.json())
         .then(jsonNotes => {
             notes = jsonNotes
@@ -20,7 +21,7 @@ export const getNotes = () => {
 
 export const saveNote = note => {
     let stringifiedObj = JSON.stringify(note)
-    debugger
+    // debugger
     return fetch('http://localhost:8088/notes', {
         method: "POST",
         headers: {
@@ -31,6 +32,16 @@ export const saveNote = note => {
     .then(getNotes) // fetch the notes collection containing the newly added note
     .then(dispatchStateChangeEvent) // tell any component listening that the notes state has been updated
 }
+
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+        .then(dispatchStateChangeEvent)
+}
+
+
 
 
 

@@ -1,5 +1,6 @@
 import { ShowAssociatesButton } from "../associates/ShowAssociatesButton.js";
 
+
 export const Criminal = (criminal) => {
     return `
     <div class="criminal__">

@@ -22,3 +22,5 @@ export const OfficerList = () => {
             `
         })
 }
+
+// line 14 orange officer is pulling from "officer.js" the parameter on 14 in blue is from line 13 for loop.

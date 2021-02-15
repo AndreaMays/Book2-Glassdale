@@ -1,5 +1,6 @@
-import { getNotes, useNotes } from "./NoteDataProvider.js";
+import { getNotes, useNotes, deleteNote } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
+import { getCriminals, useCriminals } from "../criminals/CriminalDataProvider.js";
 
 // Query the DOM for the element that your notes will be added to 
 const contentTarget = document.querySelector(".noteListContainer")
@@ -10,9 +11,11 @@ eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
 })
 
-const render = (noteArray) => {
+const render = (noteArray, criminalArray) => {
     const allNotesConvertedToStrings = noteArray.map( noteObject => {
-        return NoteHTMLConverter(noteObject)
+        const relatedCriminalObject = criminalArray.find(criminal => criminal.id === noteObject.criminalId)
+        debugger
+        return NoteHTMLConverter(noteObject, relatedCriminalObject)
     }
         
     ).join("")
@@ -28,14 +31,38 @@ const render = (noteArray) => {
 // Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
 export const NoteList = () => {
     getNotes()
+        .then(getCriminals)
         .then(() => {
             const allNotes = useNotes()
-            render(allNotes)
+            const everyCriminal = useCriminals()
+            render(allNotes, everyCriminal)
         })
 }
 
 eventHub.addEventListener("noteStateChanged", event => {
     if (contentTarget.innerHTML !== "") {
         NoteList()
+    }
+})
+
+// const eventHub = document.querySelector(".container")
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id.startsWith("deleteNote--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        /*
+            Invoke the function that performs the delete operation.
+
+            Once the operation is complete you should THEN invoke
+            useNotes() and render the note list again.
+        */
+       deleteNote(id).then(
+           () => {
+               const updatedNotes = useNotes()
+               const criminals = useCriminals()
+               render(updatedNotes, criminals)
+           }
+       )
     }
 })

@@ -1,7 +1,7 @@
 import { getCriminals, useCriminals } from "./CriminalDataProvider.js"
 import { Criminal } from "./Criminal.js"
-import { useConvictions } from "./../convictions/ConvictionDataProvider.js"
-import { useOfficers } from "../officers/OfficerProvider.js"
+import { useConvictions } from "../convictions/ConvictionDataProvider.js"
+// import { useOfficers } from "../officers/OfficerProvider.js"
 
 const eventHub = document.querySelector(".container")
 const criminalsContainer = document.querySelector(".criminalsContainer")
@@ -75,7 +75,7 @@ eventHub.addEventListener("officerSelected", event => {
     const officerName = event.detail.selectedOfficerName
     // filter criminals array and find all criminals arrested by selected officer
     const matchingOfficersArray = useCriminals().filter( criminal => criminal.arrestingOfficer === officerName)
-    debugger
+    // debugger
     
         // pass filtered array into render to dom function
       
@@ -83,4 +83,8 @@ eventHub.addEventListener("officerSelected", event => {
             renderToDom(matchingOfficersArray)
     } 
 
+})
+
+eventHub.addEventListener("witnessesClicked", () => {
+  criminalsContainer.innerHTML = ""
 })
