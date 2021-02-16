@@ -19,7 +19,7 @@ OfficerList
 //CHAPTER 7 FUNCTION CALLS///
 NoteForm()
 ShowNoteButton()
-ShowWitnessesButton
+ShowWitnessesButton()
 
 
 // useOfficers()

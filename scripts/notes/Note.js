@@ -14,3 +14,7 @@ export const NoteHTMLConverter = (noteObject, criminalObject) => {
             </section>
     `
 }
+
+// CHAPTER 14 Lecture note.... Jisie put her "evenlistener" on this page instead of
+// the "NoteList" module
+// return on line 3 takes it back to NoteList where it was called from
