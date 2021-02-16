@@ -15,6 +15,7 @@ eventHub.addEventListener("change", changeEvent => {
         eventHub.dispatchEvent(officerSelectedCustomEvent)
     }
 })
+// line 9 - 13 is the "payload" data
 
 export const OfficerSelect = () => {
     getOfficers()

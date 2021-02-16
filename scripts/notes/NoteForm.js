@@ -1,25 +1,12 @@
-// import { Criminal } from "../criminals/Criminal.js"
 import { saveNote } from "./NoteDataProvider.js"
-// import { criminalSelect } from "../criminals/CriminalSelect.js";
 import { getCriminals, useCriminals } from "../criminals/CriminalDataProvider.js";
 getCriminals()
 
+// import { Criminal } from "../criminals/Criminal.js"
+// import { criminalSelect } from "../criminals/CriminalSelect.js";
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
-
-// Calling 
-
-
-// const criminalSelect = () => {
-
-//     getCriminals()
-//       .then(() => {
-//         const criminal = useCriminals()
-//         renderToDom(criminal)
-  
-//       })
-//   }
 
   const render = (criminalSelectArray) => {
     contentTarget.innerHTML = `
