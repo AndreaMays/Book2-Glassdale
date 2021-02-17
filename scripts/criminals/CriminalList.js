@@ -1,27 +1,50 @@
 import { getCriminals, useCriminals } from "./CriminalDataProvider.js"
 import { Criminal } from "./Criminal.js"
 import { useConvictions } from "../convictions/ConvictionDataProvider.js"
+import { getCriminalFacilities, useCriminalFacilities } from "../facilities/CriminalFacilityProvider.js"
+import { getFacilities, useFacilities } from "../facilities/FacilityProvider.js";
+
 // import { useOfficers } from "../officers/OfficerProvider.js"
 
 const eventHub = document.querySelector(".container")
 const criminalsContainer = document.querySelector(".criminalsContainer")
 
+
 export const CriminalList = () => {
 
   getCriminals()
+    .then(getCriminalFacilities())
+    .then(getFacilities())
+      // Pull in the data now that it has been fetched
     .then(() => {
       const criminalsArray = useCriminals()
-      renderToDom(criminalsArray)
+      const facilities = useFacilities()
+      const crimFacility = useCriminalFacilities()
+      renderToDom(criminalsArray, crimFacility, facilities)
 
     })
 }
+// is line 23 correct?
+// Below: in the chapter why is "allFacilities" and "allrelationships" passed as a parameter? Instead of the variables "facilities" and "facilityRelationshipsForThisCriminal"?
+// "facilities" variable is not lit up? But i'm not sure why
+// is line 34 (parameter of the map) correct? Are we pulling that from criminal.js
 
-const renderToDom = criminalCollection => {
+
+const renderToDom = (criminalCollection, crimFacilityJoinTable, facilityCollection) => {
   let criminalsHTMLRepresentations = ""
 
   for (const criminal of criminalCollection) {
-    criminalsHTMLRepresentations += Criminal(criminal)
-  }
+    
+        const facilityRelationshipsForThisCriminal = crimFacilityJoinTable.filter(criminalFacility => criminalFacility.criminalId === criminal.id)
+        const allFacilities = facilityRelationshipsForThisCriminal.map(criminalFacility => {
+        const matchingFacilityObject = facilityCollection.find(facility => facility.id === criminalFacility.facilityId)
+          return matchingFacilityObject
+  })
+  criminalsHTMLRepresentations += Criminal(criminal, allFacilities)
+}
+ 
+ 
+// iterate through the criminals below with for loop
 
   criminalsContainer.innerHTML = `
         <h3>Criminals</h3>
